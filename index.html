@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Premier Rentals — Luxury Private Resort Experiences</title>
+  <meta name="description" content="Premier Rentals offers exclusive luxury private resort experiences. Book the Premier Pool House or Premier Patio for an unforgettable stay."/>
+  <meta property="og:title" content="Premier Rentals — Luxury Private Resort Experiences"/>
+  <meta property="og:description" content="Exclusive private resort experiences. Book now."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Raleway:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════ -->
+<nav id="nav" role="navigation" aria-label="Main">
+  <a href="#" class="nav-logo">
+    <span class="nav-logo-top">Premier</span>
+    <span class="nav-logo-sub">Luxury Rentals</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#amenities">Amenities</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#" class="nav-book-btn" onclick="openModal(event)">Book Now</a>
+  <div class="hamburger" onclick="openDrawer()" aria-label="Open menu" role="button" tabindex="0">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ══════════ MOBILE DRAWER ══════════ -->
+<div class="nav-drawer" id="drawer" role="dialog" aria-label="Navigation menu">
+  <button class="drawer-close" onclick="closeDrawer()">×</button>
+  <a href="#home" onclick="closeDrawer()">Home</a>
+  <a href="#properties" onclick="closeDrawer()">Properties</a>
+  <a href="#amenities" onclick="closeDrawer()">Amenities</a>
+  <a href="#gallery" onclick="closeDrawer()">Gallery</a>
+  <a href="#about" onclick="closeDrawer()">About</a>
+  <a href="#contact" onclick="closeDrawer()">Contact</a>
+  <a href="#" onclick="openModal(event);closeDrawer();" style="color:var(--gold);">Book Now</a>
+</div>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero" id="home" aria-label="Hero">
+  <div class="hero-bg"></div>
+  <div class="hero-center">
+    <div class="hero-eyebrow"><span>Exclusive Private Resort Experiences</span></div>
+    <h1>Premier<br><em>Rentals</em></h1>
+    <p class="hero-tagline">Luxury Private Resort Experiences</p>
+    <div class="hero-props">
+      <span class="hero-prop">Premier Pool House</span>
+      <span class="hero-prop-dot">◆</span>
+      <span class="hero-prop">Premier Patio</span>
+      <span class="hero-prop-dot">◆</span>
+      <span class="hero-prop">Private Villa</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#properties" class="btn-hero-ghost">View Properties</a>
+      <a href="#" class="btn-hero-primary" onclick="openModal(event)">Book Now</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+  <div class="hero-side" aria-hidden="true">Geneva · Switzerland</div>
+</section>
+
+<!-- ══════════ BOOKING BAR ══════════ -->
+<div class="booking-bar-wrap" role="search" aria-label="Quick availability search">
+  <div class="booking-bar">
+    <div class="bbar-field">
+      <span class="bbar-label">Property</span>
+      <select id="bb-property" aria-label="Select property">
+        <option value="">All Properties</option>
+        <option>Premier Pool House</option>
+        <option>Premier Patio</option>
+        <option>Private Villa Suite</option>
+      </select>
+    </div>
+    <div class="bbar-field">
+      <span class="bbar-label">Check-In</span>
+      <input type="date" id="bb-checkin" aria-label="Check-in date"/>
+    </div>
+    <div class="bbar-field">
+      <span class="bbar-label">Check-Out</span>
+      <input type="date" id="bb-checkout" aria-label="Check-out date"/>
+    </div>
+    <div class="bbar-field">
+      <span class="bbar-label">Guests</span>
+      <select id="bb-guests" aria-label="Number of guests">
+        <option>1 Guest</option>
+        <option selected>2 Guests</option>
+        <option>3 Guests</option>
+        <option>4 Guests</option>
+        <option>5+ Guests</option>
+      </select>
+    </div>
+    <button class="bbar-btn" onclick="openModal(event)">Check Availability</button>
+  </div>
+</div>
+
+<!-- ══════════ STATS ══════════ -->
+<div class="intro-strip reveal" aria-label="Key statistics">
+  <div class="intro-stat">
+    <div class="intro-stat-num">3<sup>+</sup></div>
+    <div class="intro-stat-label">Exclusive Properties</div>
+  </div>
+  <div class="intro-stat">
+    <div class="intro-stat-num">500<sup>+</sup></div>
+    <div class="intro-stat-label">Happy Guests</div>
+  </div>
+  <div class="intro-stat">
+    <div class="intro-stat-num">5<sup>★</sup></div>
+    <div class="intro-stat-label">Average Rating</div>
+  </div>
+  <div class="intro-stat">
+    <div class="intro-stat-num">24<sup>/7</sup></div>
+    <div class="intro-stat-label">Concierge Service</div>
+  </div>
+</div>
+
+<!-- ══════════ FEATURED PROPERTIES ══════════ -->
+<section class="properties reveal" id="properties" aria-label="Featured Properties">
+  <div class="properties-header">
+    <div>
+      <div class="section-eyebrow">Our Properties</div>
+      <h2 class="section-title">Exclusive <em>Retreats</em></h2>
+    </div>
+    <a href="#properties" class="link-arrow">All Properties</a>
+  </div>
+  <div class="prop-grid">
+    <!-- Pool House -->
+    <div class="prop-card reveal reveal-d1">
+      <img class="prop-card-img" src="pool.jpg" alt="Premier Pool House" loading="lazy"/>
+      <div class="prop-card-body">
+        <span class="prop-badge">Signature Property</span>
+        <div class="prop-name">Premier Pool House</div>
+        <p class="prop-desc">An architectural masterpiece centered around a temperature-controlled infinity pool. Designed for those who demand the extraordinary — private, serene, and utterly luxurious.</p>
+        <div class="prop-amenities">
+          <span class="prop-amenity">Infinity Pool</span>
+          <span class="prop-amenity">4 Bedrooms</span>
+          <span class="prop-amenity">Private Terrace</span>
+          <span class="prop-amenity">Chef Service</span>
+          <span class="prop-amenity">Up to 12 Guests</span>
+        </div>
+        <div class="prop-footer">
+          <div class="prop-price">₱4,999 <span>/night</span></div>
+          <a href="#" class="prop-cta" onclick="openModal(event)">Book Now</a>
+        </div>
+      </div>
+    </div>
+    <!-- Patio -->
+    <div class="prop-card reveal reveal-d2">
+      <img class="prop-card-img" src="prio.jpg" alt="Premier Patio" loading="lazy"/>
+      <div class="prop-card-body">
+        <span class="prop-badge">Garden Estate</span>
+        <div class="prop-name">Premier Patio</div>
+        <p class="prop-desc">A sun-drenched garden sanctuary with lush landscaping, an al fresco dining pavilion, and sweeping panoramic views. The perfect backdrop for intimate gatherings.</p>
+        <div class="prop-amenities">
+          <span class="prop-amenity">Garden Terrace</span>
+          <span class="prop-amenity">3 Bedrooms</span>
+          <span class="prop-amenity">Al Fresco Dining</span>
+          <span class="prop-amenity">Fire Pit</span>
+          <span class="prop-amenity">Up to 8 Guests</span>
+        </div>
+        <div class="prop-footer">
+          <div class="prop-price">₱3,000 <span>/night</span></div>
+          <a href="#" class="prop-cta" onclick="openModal(event)">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ EXPERIENCE ══════════ -->
+<div class="experience reveal" id="about" aria-label="The Premier Experience">
+  <div class="exp-img-wrap">
+    <img class="exp-img" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900&q=85" alt="Luxury resort interior" loading="lazy"/>
+  </div>
+  <div class="exp-content">
+    <div class="section-eyebrow" style="color:var(--gold)">Our Philosophy</div>
+    <h2 class="section-title" style="color:var(--white)">More Than a <em style="color:var(--gold-bright)">Stay</em></h2>
+    <p>At Premier Rentals, we believe true luxury is not purchased — it is experienced. Every property is curated to deliver an atmosphere of total privacy and effortless indulgence.</p>
+    <p>From the moment of arrival, our dedicated concierge team anticipates every detail, ensuring each guest's stay transcends the ordinary.</p>
+    <ul class="exp-list">
+      <li>Private chef available upon request</li>
+      <li>Bespoke in-house spa treatments</li>
+      <li>24/7 dedicated concierge service</li>
+      <li>Curated local experiences & transfers</li>
+      <li>Fully stocked premium pantry on arrival</li>
+    </ul>
+    <a href="#" class="btn-dark" onclick="openModal(event)">Reserve Your Experience</a>
+  </div>
+</div>
+
+<!-- ══════════ AMENITIES ══════════ -->
+<section class="amenities-section reveal" id="amenities" aria-label="Amenities">
+  <div class="section-eyebrow">Included With Every Stay</div>
+  <h2 class="section-title">World-Class <em>Amenities</em></h2>
+  <div class="amenities-grid">
+    <div class="amenity-tile reveal reveal-d1">
+    <div class="amenity-icon"><i class="fas fa-water"></i></div>
+      <h3>Private Pool</h3>
+      <p>Heated infinity pools with automated climate control, available exclusively for your group.</p>
+    </div>
+    <div class="amenity-tile reveal reveal-d2">
+    <div class="amenity-icon"><i class="fas fa-utensils"></i></div>
+      <h3>Private Chef</h3>
+      <p>In-residence culinary team available for bespoke menus, dietary preferences, and event catering.</p>
+    </div>
+    <div class="amenity-tile reveal reveal-d3">
+      <div class="amenity-icon"><i class="fas fa-spa"></i></div> <!-- In-Villa Spa -->
+      <h3>In-Villa Spa</h3>
+      <p>Certified therapists delivering signature treatments, facials, and wellness rituals at your residence.</p>
+    </div>
+    <div class="amenity-tile reveal reveal-d4">
+      <div class="amenity-icon"><i class="fas fa-car"></i></div>
+      <h3>Chauffeur Service</h3>
+      <p>Airport transfers and daily chauffeured excursions in our luxury fleet of executive vehicles.</p>
+    </div>
+    <div class="amenity-tile reveal reveal-d1">
+      <div class="amenity-icon"><i class="fas fa-film"></i></div>
+      <h3>Home Cinema</h3>
+      <p>Private screening rooms with 4K projection, Dolby Atmos, and curated content libraries.</p>
+    </div>
+    <div class="amenity-tile reveal reveal-d2">
+      <div class="amenity-icon"><i class="fas fa-dumbbell"></i></div>
+      <h3>Fitness Studio</h3>
+      <p>State-of-the-art gym with personal trainer available for daily sessions and bespoke programming.</p>
+    </div>
+    <div class="amenity-tile reveal reveal-d3">
+      <div class="amenity-icon"><i class="fas fa-glass-cheers"></i></div>
+      <h3>Stocked Cellar</h3>
+      <p>Pre-stocked premium wines, Champagnes, and spirits — curated to your taste on request.</p>
+    </div>
+    <div class="amenity-tile reveal reveal-d4">
+      <div class="amenity-icon"><i class="fas fa-lock"></i></div>
+      <h3>Total Privacy</h3>
+      <p>Gated private residences with 24/7 security, ensuring your complete peace and discretion.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ QUOTE PARALLAX ══════════ -->
+<div class="quote-parallax reveal" aria-label="Guest quote">
+  <div class="quote-inner">
+    <span class="quote-mark">"</span>
+    <p class="quote-text">Staying at Premier Rentals was not a holiday — it was a complete transformation. Every sense was elevated, every moment, unforgettable.</p>
+    <div class="quote-attr">Sophia Beaumont — London</div>
+  </div>
+</div>
+
+<!-- ══════════ GALLERY ══════════ -->
+<section class="gallery-section reveal" id="gallery" aria-label="Photo Gallery">
+  <div class="gallery-inner">
+    <div class="section-eyebrow">Visual Stories</div>
+    <h2 class="section-title">Life at <em>Premier</em></h2>
+  </div>
+  <div class="gallery-mosaic">
+    <div class="g-item"><img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=700&q=80" alt="Pool at sunset" loading="lazy"/></div>
+    <div class="g-item"><img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=500&q=80" alt="Suite interior" loading="lazy"/></div>
+    <div class="g-item"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&q=80" alt="Fine dining" loading="lazy"/></div>
+    <div class="g-item"><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&q=80" alt="Spa treatment" loading="lazy"/></div>
+    <div class="g-item"><img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=500&q=80" alt="Terrace view" loading="lazy"/></div>
+  </div>
+</section>
+
+<!-- ══════════ TESTIMONIALS ══════════ -->
+<section class="testimonials reveal" aria-label="Guest Reviews">
+  <div class="testimonials-header">
+    <div class="section-eyebrow">Guest Stories</div>
+    <h2 class="section-title">What Our <em>Guests</em> Say</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card reveal reveal-d1">
+      <div class="testi-stars">★★★★★</div>
+      <blockquote>"The Premier Pool House redefined what a private holiday could be. The staff were extraordinary — invisible yet always present when needed."</blockquote>
+      <div class="testi-author">
+        <img class="testi-avatar" src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&q=80" alt="Guest"/>
+        <div>
+          <div class="testi-name">Isabelle Moreau</div>
+          <div class="testi-loc">Paris · 3-Night Stay</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal reveal-d2">
+      <div class="testi-stars">★★★★★</div>
+      <blockquote>"We hosted our anniversary at the Premier Patio. The chef prepared an astonishing dinner under the stars. Truly a memory for a lifetime."</blockquote>
+      <div class="testi-author">
+        <img class="testi-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Guest"/>
+        <div>
+          <div class="testi-name">James & Chloe Hart</div>
+          <div class="testi-loc">London · Anniversary Stay</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal reveal-d3">
+      <div class="testi-stars">★★★★★</div>
+      <blockquote>"From the airport transfer to the farewell champagne, every single detail was perfect. Premier Rentals sets a new benchmark for private luxury."</blockquote>
+      <div class="testi-author">
+        <img class="testi-avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80" alt="Guest"/>
+        <div>
+          <div class="testi-name">Alexander Vogt</div>
+          <div class="testi-loc">Zürich · Corporate Retreat</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CONTACT ══════════ -->
+<div class="contact-section" id="contact" aria-label="Contact us">
+  <div class="contact-left">
+    <div class="contact-left-inner">
+      <div class="section-eyebrow" style="color:var(--gold)">Get In Touch</div>
+      <h2 class="section-title" style="color:var(--white)">Begin Your <em style="color:var(--gold-bright)">Journey</em></h2>
+      <p>Our reservations team is available around the clock to craft your perfect bespoke experience. Reach us directly or use the form.</p>
+      <div class="contact-info">
+        <div class="contact-info-item">
+          <span class="ci-icon">📞</span>
+          <div class="ci-text">
+            <span class="ci-label">Reservations</span>
+            +1 (555) 234-5678
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <span class="ci-icon">✉️</span>
+          <div class="ci-text">
+            <span class="ci-label">Email</span>
+            reservations@premierrentals.com
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <span class="ci-icon">📍</span>
+          <div class="ci-text">
+            <span class="ci-label">Location</span>
+            Available in Geneva, Tuscany & Santorini
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contact-right">
+    <h3>Request Information</h3>
+    <div class="cf-row">
+      <div class="cf-group">
+        <label for="cf-name">Full Name</label>
+        <input type="text" id="cf-name" placeholder="Your name"/>
+      </div>
+      <div class="cf-group">
+        <label for="cf-email">Email</label>
+        <input type="email" id="cf-email" placeholder="your@email.com"/>
+      </div>
+    </div>
+    <div class="cf-row">
+      <div class="cf-group">
+        <label for="cf-prop">Property Interest</label>
+        <select id="cf-prop">
+          <option>Premier Pool House</option>
+          <option>Premier Patio</option>
+          <option>Both / Unsure</option>
+        </select>
+      </div>
+      <div class="cf-group">
+        <label for="cf-dates">Preferred Dates</label>
+        <input type="text" id="cf-dates" placeholder="e.g. June 14–18, 2025"/>
+      </div>
+    </div>
+    <div class="cf-group" style="margin-bottom:24px">
+      <label for="cf-msg">Message</label>
+      <textarea id="cf-msg" rows="4" placeholder="Special requests, group size, occasion..."></textarea>
+    </div>
+    <button class="btn-dark" onclick="alert('Message sent! Our team will contact you within 2 hours.')">Send Enquiry</button>
+  </div>
+</div>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo">
+        <span class="nav-logo-top" style="font-size:22px">Premier</span>
+        <span class="nav-logo-sub">Luxury Rentals</span>
+      </a>
+      <p>Exclusive private resort experiences crafted for those who appreciate the extraordinary. Every stay, a masterpiece.</p>
+      <div class="footer-social">
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Facebook</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#properties">Properties</a></li>
+        <li><a href="#amenities">Amenities</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Properties</h4>
+      <ul>
+        <li><a href="#">Premier Pool House</a></li>
+        <li><a href="#">Premier Patio</a></li>
+        <li><a href="#">Private Villa Suite</a></li>
+        <li><a href="#">Corporate Retreats</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+15552345678">+1 (555) 234-5678</a></li>
+        <li><a href="mailto:reservations@premierrentals.com">reservations@premierrentals.com</a></li>
+        <li><a href="#">Geneva Office</a></li>
+        <li><a href="#">Concierge Desk</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Premier Rentals. All rights reserved.</p>
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Cookie Policy</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════ BOOKING MODAL ══════════ -->
+<div class="overlay" id="bookingOverlay" role="dialog" aria-modal="true" aria-label="Booking System" onclick="overlayClick(event)">
+  <div class="modal" id="bookingModal">
+    <div class="modal-hdr">
+      <h2>Reserve Your <span>Stay</span></h2>
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">×</button>
+    </div>
+    <div class="modal-steps">
+      <button class="mstep active" id="tab1" onclick="goStep(1)">1 · Dates</button>
+      <button class="mstep" id="tab2" onclick="goStep(2)">2 · Property</button>
+      <button class="mstep" id="tab3" onclick="goStep(3)">3 · Details</button>
+      <button class="mstep" id="tab4" onclick="goStep(4)">4 · Payment</button>
+    </div>
+    <div class="modal-body">
+
+      <!-- STEP 1: DATES -->
+      <div class="mstep-pane active" id="pane1">
+        <div class="mform-row">
+          <div class="mform-group">
+            <label for="m-checkin">Check-In Date</label>
+            <input type="date" id="m-checkin"/>
+          </div>
+          <div class="mform-group">
+            <label for="m-checkout">Check-Out Date</label>
+            <input type="date" id="m-checkout"/>
+          </div>
+        </div>
+        <div class="mform-row">
+          <div class="mform-group">
+            <label for="m-adults">Adults</label>
+            <select id="m-adults">
+              <option>1 Adult</option>
+              <option selected>2 Adults</option>
+              <option>3 Adults</option>
+              <option>4 Adults</option>
+              <option>5+ Adults</option>
+            </select>
+          </div>
+          <div class="mform-group">
+            <label for="m-children">Children</label>
+            <select id="m-children">
+              <option selected>No Children</option>
+              <option>1 Child</option>
+              <option>2 Children</option>
+              <option>3+ Children</option>
+            </select>
+          </div>
+        </div>
+        <div class="mform-group">
+          <label for="m-occasion">Special Occasion</label>
+          <select id="m-occasion">
+            <option>None</option>
+            <option>Anniversary</option>
+            <option>Birthday Celebration</option>
+            <option>Corporate Retreat</option>
+            <option>Wedding / Honeymoon</option>
+            <option>Family Gathering</option>
+          </select>
+        </div>
+        <div class="avail-badge" style="margin-top:16px">Real-time availability via Supabase</div>
+      </div>
+
+      <!-- STEP 2: PROPERTY -->
+      <div class="mstep-pane" id="pane2">
+        <p style="font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:20px;line-height:1.7;">Select your preferred property. All prices shown per night.</p>
+        <div class="prop-option-grid">
+          <div class="prop-option sel" id="opt1" onclick="selProp(1)">
+            <img src="https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?w=400&q=70" alt="Pool House"/>
+            <div class="prop-option-body">
+              <div class="prop-option-name">Premier Pool House</div>
+              <div class="prop-option-price">From $1,200 / night · Up to 12 guests</div>
+            </div>
+          </div>
+          <div class="prop-option" id="opt2" onclick="selProp(2)">
+            <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=400&q=70" alt="Premier Patio"/>
+            <div class="prop-option-body">
+              <div class="prop-option-name">Premier Patio</div>
+              <div class="prop-option-price">From $850 / night · Up to 8 guests</div>
+            </div>
+          </div>
+        </div>
+        <div class="avail-badge">2 properties available for selected dates</div>
+      </div>
+
+      <!-- STEP 3: GUEST DETAILS -->
+      <div class="mstep-pane" id="pane3">
+        <div class="mform-row">
+          <div class="mform-group">
+            <label for="m-fname">First Name</label>
+            <input type="text" id="m-fname" placeholder="Jean"/>
+          </div>
+          <div class="mform-group">
+            <label for="m-lname">Last Name</label>
+            <input type="text" id="m-lname" placeholder="Dupont"/>
+          </div>
+        </div>
+        <div class="mform-row">
+          <div class="mform-group">
+            <label for="m-email">Email Address</label>
+            <input type="email" id="m-email" placeholder="jean@example.com"/>
+          </div>
+          <div class="mform-group">
+            <label for="m-phone">Phone Number</label>
+            <input type="tel" id="m-phone" placeholder="+1 555 000 0000"/>
+          </div>
+        </div>
+        <div class="mform-group" style="margin-bottom:20px">
+          <label for="m-requests">Special Requests</label>
+          <input type="text" id="m-requests" placeholder="Dietary needs, early arrival, celebrations..."/>
+        </div>
+        <!-- Summary Preview -->
+        <div class="summary-panel">
+          <div class="srow"><span>Property</span><strong id="sum-prop">Premier Pool House</strong></div>
+          <div class="srow"><span>Check-In</span><strong id="sum-in">—</strong></div>
+          <div class="srow"><span>Check-Out</span><strong id="sum-out">—</strong></div>
+          <div class="srow"><span>Guests</span><strong>2 Adults</strong></div>
+          <div class="srow"><span>Rate</span><strong>$1,200 / night</strong></div>
+        </div>
+      </div>
+
+      <!-- STEP 4: PAYMENT -->
+      <div class="mstep-pane" id="pane4">
+        <div class="summary-panel" style="margin-bottom:28px">
+          <div class="srow"><span>Premier Pool House × 3 nights</span><strong>$3,600</strong></div>
+          <div class="srow"><span>Cleaning Fee</span><strong>$180</strong></div>
+          <div class="srow"><span>Service Charge (5%)</span><strong>$180</strong></div>
+          <div class="srow total"><span>Total Due</span><span>$3,960</span></div>
+        </div>
+        <p style="font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Payment Method</p>
+        <div class="payment-logos">
+          <div class="pay-logo sel" onclick="selPay(this)">CARD</div>
+          <div class="pay-logo" onclick="selPay(this)">PAYPAL</div>
+          <div class="pay-logo" onclick="selPay(this)">STRIPE</div>
+        </div>
+        <div class="mform-group" style="margin-bottom:16px">
+          <label for="m-card">Card Number</label>
+          <input type="text" id="m-card" placeholder="4242 4242 4242 4242" maxlength="19"/>
+        </div>
+        <div class="mform-row">
+          <div class="mform-group">
+            <label for="m-exp">Expiry</label>
+            <input type="text" id="m-exp" placeholder="MM / YY" maxlength="7"/>
+          </div>
+          <div class="mform-group">
+            <label for="m-cvv">CVV</label>
+            <input type="text" id="m-cvv" placeholder="•••" maxlength="4"/>
+          </div>
+        </div>
+        <div class="secure-note">Secured by Stripe · 256-bit SSL · PCI DSS Compliant</div>
+      </div>
+    </div><!-- /modal-body -->
+
+    <div class="modal-ftr">
+      <button class="btn-back" id="mBtnBack" style="display:none" onclick="prevStep()">← Back</button>
+      <span class="step-counter" id="stepCounter">Step 1 of 4</span>
+      <button class="btn-next" id="mBtnNext" onclick="nextStep()">Continue →</button>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script> 
+
+</body>
+</html>
